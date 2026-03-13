@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title><%= forum.name %> — Quiet Theory Club</title></head>
+<body>
+  <a href="/">← Back</a>
+  <h1><%= forum.name %></h1>
+  <p><%= forum.description %></p>
+  <% if (user) { %>
+    <a href="/forum/<%= forum.id %>/new-thread">+ New Thread</a>
+  <% } %>
+  <% if (threads.length === 0) { %>
+    <p>No threads yet.</p>
+  <% } else { %>
+    <% threads.forEach(thread => { %>
+      <div>
+        <a href="/thread/<%= thread.id %>"><%= thread.title %></a>
+        <span>by <%= thread.username %></span>
+      </div>
+    <% }) %>
+  <% } %>
+</body>
+</html>

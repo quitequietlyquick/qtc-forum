@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login — Quiet Theory Club</title></head>
+<body>
+  <h1>Log In</h1>
+  <% if (error) { %><p style="color:red"><%= error %></p><% } %>
+  <form method="POST" action="/login">
+    <input name="username" placeholder="Username" required><br>
+    <input name="password" type="password" placeholder="Password" required><br>
+    <button type="submit">Log In</button>
+  </form>
+  <a href="/register">Need an account?</a>
+</body>
+</html>

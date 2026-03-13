@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>New Thread — <%= forum.name %></title></head>
+<body>
+  <a href="/forum/<%= forum.id %>">← Back</a>
+  <h1>New Thread in <%= forum.name %></h1>
+  <% if (error) { %><p style="color:red"><%= error %></p><% } %>
+  <form method="POST">
+    <input name="title" placeholder="Thread title" required style="display:block;width:100%;margin-bottom:10px"><br>
+    <textarea name="body" placeholder="Write your post..." rows="8" style="display:block;width:100%" required></textarea><br>
+    <button type="submit">Post Thread</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiet Theory Club</title>
+</head>
+<body>
+  <h1>Quiet Theory Club</h1>
+  <% categories.forEach(cat => { %>
+    <h2><%= cat.name %></h2>
+    <% cat.forums.forEach(forum => { %>
+      <div>
+        <a href="/forum/<%= forum.id %>"><%= forum.name %></a>
+        <p><%= forum.description %></p>
+      </div>
+    <% }) %>
+  <% }) %>
+</body>
+</html>

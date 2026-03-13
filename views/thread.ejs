@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title><%= thread.title %> — Quiet Theory Club</title></head>
+<body>
+  <a href="/">← Back</a>
+  <h1><%= thread.title %></h1>
+  <% posts.forEach(post => { %>
+    <div style="border-bottom:1px solid #ccc;padding:10px 0">
+      <strong><%= post.username %></strong>
+      <span><%= post.member_type %></span>
+      <p><%= post.body %></p>
+      <small><%= post.created_at %></small>
+    </div>
+  <% }) %>
+  <% if (user) { %>
+    <h3>Post a Reply</h3>
+    <form method="POST" action="/thread/<%= thread.id %>/reply">
+      <textarea name="body" rows="6" style="display:block;width:100%" placeholder="Write your reply..." required></textarea><br>
+      <button type="submit">Post Reply</button>
+    </form>
+  <% } else { %>
+    <p><a href="/login">Log in</a> to reply.</p>
+  <% } %>
+</body>
+</html>
